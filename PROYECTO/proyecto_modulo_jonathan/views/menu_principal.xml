@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Menú Principal -->
+        <menuitem id="menu_jonathan_garcia"
+                  name="Jonathan Garcia"
+                  sequence="10"/>
+    </data>
+</odoo>

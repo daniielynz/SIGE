@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_alumnado_tree" model="ir.ui.view">
+        <field name="name">alumnado.tree</field>
+        <field name="model">proyecto_modulo_jonathan.alumnado</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <field name="fecha_nacimiento"/>
+                <field name="email"/>
+                <field name="ciclo_formativo"/>
+                <field name="nota_media"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

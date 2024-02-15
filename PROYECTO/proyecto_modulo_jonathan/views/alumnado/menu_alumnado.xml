@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Acciones para 'Alumnado' -->
+        <record model="ir.actions.act_window" id="action_alumnado_tree">
+            <field name="name">Ver Alumnado</field>
+            <field name="res_model">proyecto_modulo_jonathan.alumnado</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_alumnado_form"/>
+        </record>
+        <record model="ir.actions.act_window" id="action_alumnado_form">
+            <field name="name">Nuevo Alumno</field>
+            <field name="res_model">proyecto_modulo_jonathan.alumnado</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_alumnado_tree"/>
+        </record>
+
+        <!-- Submenú para 'Alumnado' bajo 'Jonathan Garcia' -->
+        <menuitem id="menu_jonathan_garcia_alumnado"
+                  name="Alumnado"
+                  parent="menu_jonathan_garcia"
+                  action="proyecto_modulo_jonathan.action_alumnado_tree"
+                  sequence="20"/>
+        <menuitem   id="menu_alumnado_todos"
+                    name="Ver todos"
+                    parent="menu_jonathan_garcia_alumnado"
+                    action="action_alumnado_tree"
+                    groups="group_administrador,group_tutor,group_estudiante"/>
+        <menuitem   id="menu_alumnado_nuevo"
+                    name="Nuevo"
+                    parent="menu_jonathan_garcia_alumnado"
+                    action="action_alumnado_form"
+                    groups="group_administrador,group_tutor"/>
+    </data>
+</odoo>

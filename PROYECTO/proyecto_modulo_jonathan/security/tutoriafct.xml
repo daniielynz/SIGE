@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Permiso para el modelo tutoriafct -->
+        <record model="ir.model.access" id="access_admin_tutoriafct">
+            <field name="name">access_tutoriafct_admin</field>
+            <field name="model_id" ref="proyecto_modulo_jonathan.model_proyecto_modulo_jonathan_tutoriafct"/>
+            <field name="group_id" ref="proyecto_modulo_jonathan.group_administrador"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        <!-- Le damos permisos al tutor para que sea capaz de crear y editar las tutorias-->
+        <record model="ir.model.access" id="access_tutor_tutoriafct">
+            <field name="name">access_tutoriafct_tutor</field>
+            <field name="model_id" ref="proyecto_modulo_jonathan.model_proyecto_modulo_jonathan_tutoriafct"/>
+            <field name="group_id" ref="proyecto_modulo_jonathan.group_tutor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        <!-- No creo que tenga mucho sentido que un estudiante pueda crear tutorias entonces
+             solo le voy a dar permisos de lectura -->
+        <record model="ir.model.access" id="access_estudiante_tutoriafct">
+            <field name="name">access_tutoriafct_estudiante</field>
+            <field name="model_id" ref="proyecto_modulo_jonathan.model_proyecto_modulo_jonathan_tutoriafct"/>
+            <field name="group_id" ref="proyecto_modulo_jonathan.group_estudiante"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+    </data>
+</odoo>

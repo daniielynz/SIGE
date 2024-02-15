@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Acciones para 'Alumnado' -->
+        <record model="ir.actions.act_window" id="action_empresa_tree">
+            <field name="name">Ver Empresas</field>
+            <field name="res_model">proyecto_modulo_jonathan.empresa</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_empresa_form"/>
+        </record>
+        <record model="ir.actions.act_window" id="action_empresa_form">
+            <field name="name">Nueva Empresa</field>
+            <field name="res_model">proyecto_modulo_jonathan.empresa</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_empresa_tree"/>
+        </record>
+
+        <!-- Submenú para 'Empresas' bajo 'Jonathan Garcia' -->
+        <menuitem id="menu_jonathan_garcia_empresa"
+                  name="Empresa"
+                  parent="menu_jonathan_garcia"
+                  action="proyecto_modulo_jonathan.action_empresa_tree"
+                  sequence="30"/>
+        <menuitem   id="menu_empresa_todos"
+                    name="Ver todos"
+                    parent="menu_jonathan_garcia_empresa"
+                    action="action_empresa_tree"
+                    groups="group_administrador,group_tutor,group_estudiante"/>
+        <menuitem   id="menu_empresa_nuevo"
+                    name="Nuevo"
+                    parent="menu_jonathan_garcia_empresa"
+                    action="action_empresa_form"
+                    groups="group_administrador,group_tutor"/>
+    </data>
+</odoo>

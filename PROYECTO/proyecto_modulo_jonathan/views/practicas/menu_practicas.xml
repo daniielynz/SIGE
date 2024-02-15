@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Acciones para 'Practicas' -->
+        <record model="ir.actions.act_window" id="action_practicas_tree">
+            <field name="name">Ver Practicas</field>
+            <field name="res_model">proyecto_modulo_jonathan.practicas</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_practicas_form"/>
+        </record>
+        <record model="ir.actions.act_window" id="action_practicas_form">
+            <field name="name">Nueva Practicas</field>
+            <field name="res_model">proyecto_modulo_jonathan.practicas</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_practicas_tree"/>
+        </record>
+
+        <!-- Submenú para 'Practicas' bajo 'Jonathan Garcia' -->
+        <menuitem id="menu_jonathan_garcia_practicas"
+                  name="Practicas"
+                  parent="menu_jonathan_garcia"
+                  action="proyecto_modulo_jonathan.action_practicas_tree"
+                  sequence="50"/>
+        <menuitem   id="menu_practicas_todos"
+                    name="Ver todos"
+                    parent="menu_jonathan_garcia_practicas"
+                    action="action_practicas_tree"
+                    groups="group_administrador,group_tutor,group_estudiante"/>
+        <menuitem   id="menu_practicas_nuevo"
+                    name="Nuevo"
+                    parent="menu_jonathan_garcia_practicas"
+                    action="action_practicas_form"
+                    groups="group_administrador,group_tutor"/>
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+    <record id="view_practicas_form" model="ir.ui.view">
+        <field name="name">practicas.form</field>
+        <field name="model">proyecto_modulo_jonathan.practicas</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="alumnado_id"/>
+                        <field name="empresa_id"/>
+                        <field name="fecha_inicio"/>
+                        <field name="fecha_fin"/>
+                        <field name="departamento"/>
+                        <field name="actividades"/>
+                        <field name="tutor_empresa"/>
+                        <field name="horas"/>
+                        <field name="evaluacion"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

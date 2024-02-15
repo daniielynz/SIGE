@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Permiso para el modelo practicas -->
+        <record model="ir.model.access" id="access_practicas_admin">
+            <field name="name">access_practicas_admin</field>
+            <field name="model_id" ref="proyecto_modulo_jonathan.model_proyecto_modulo_jonathan_practicas"/>
+            <field name="group_id" ref="proyecto_modulo_jonathan.group_administrador"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        <!-- Tanto tutores como empresas creo que deberian
+             tener permisos de lectura, creacion y escritura sobre las practicas-->
+        <record model="ir.model.access" id="access_practicas_tutor">
+            <field name="name">access_practicas_tutor</field>
+            <field name="model_id" ref="proyecto_modulo_jonathan.model_proyecto_modulo_jonathan_practicas"/>
+            <field name="group_id" ref="proyecto_modulo_jonathan.group_tutor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_practicas_empresa">
+            <field name="name">access_practicas_empresa</field>
+            <field name="model_id" ref="proyecto_modulo_jonathan.model_proyecto_modulo_jonathan_practicas"/>
+            <field name="group_id" ref="proyecto_modulo_jonathan.group_empresa"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <!-- No tiene sentido que el alumno pueda cambiar los valores de los campos de practicas
+             pero a su vez si que tendrá mucho sentido que, por ejemplo, sepa su fecha de fin de practicas, etc.-->
+        <record model="ir.model.access" id="access_practicas_estudiante">
+            <field name="name">access_practicas_estudiante</field>
+            <field name="model_id" ref="proyecto_modulo_jonathan.model_proyecto_modulo_jonathan_practicas"/>
+            <field name="group_id" ref="proyecto_modulo_jonathan.group_estudiante"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Grupo para Administradores -->
+        <record id="group_administrador" model="res.groups">
+            <field name="name">Administrador</field>
+        </record>
+
+        <!-- Grupo para Tutores -->
+        <record id="group_tutor" model="res.groups">
+            <field name="name">Tutor</field>
+        </record>
+
+        <!-- Grupo para Empresas -->
+        <record id="group_empresa" model="res.groups">
+            <field name="name">Empresa</field>
+        </record>
+
+        <!-- Grupo para Estudiantes -->
+        <record id="group_estudiante" model="res.groups">
+            <field name="name">Estudiante</field>
+        </record>
+    </data>
+</odoo>

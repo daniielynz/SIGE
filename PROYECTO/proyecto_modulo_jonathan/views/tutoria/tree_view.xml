@@ -1,0 +1,14 @@
+<odoo>
+    <record id="view_tutoriafct_tree" model="ir.ui.view">
+        <field name="name">tutoriafct.tree</field>
+        <field name="model">proyecto_modulo_jonathan.tutoriafct</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre_tutor"/>
+                <field name="departamento"/>
+                <field name="email_tutor"/>
+                <field name="telefono_tutor"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
